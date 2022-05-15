@@ -1,4 +1,4 @@
-import Firstmui from './Firstmui';
+import Firstmui from './MUI_component/Firstmui';
 
 function Appmuicomponent() {
   return (

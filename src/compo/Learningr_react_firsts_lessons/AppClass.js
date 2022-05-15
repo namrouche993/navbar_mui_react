@@ -7,6 +7,7 @@ class AppClass extends Component {
       color:'blue',
       fontSize:'39px'
     }
+    
   }
 
   changeColor = () => {

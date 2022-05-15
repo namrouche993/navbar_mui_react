@@ -5,8 +5,9 @@ import Home from "./compo/Home";
 import About from "./compo/About";
 import Contact from "./compo/Contact";
 import Faq from "./compo/Faq";
-import Googlesheetiframe from "./Googlesheetiframe";
-import Appmuicomponent from "./compo/MUI_component/Appmuicomponent";
+import Googlesheetiframe from "./compo/Googlesheetiframe";
+import Appmuicomponent from "./compo/Appmuicomponent";
+import Learningreact from "./compo/Learningreact";
 
 
 
@@ -23,6 +24,7 @@ export default class App extends Component {
           <Route path='/faq' component={Faq}></Route>
           <Route path='/googlesheet' component={Googlesheetiframe}></Route>
           <Route path='/appmuicomponent' component={Appmuicomponent}></Route>
+          <Route path='/learningreact' component={Learningreact}></Route>
 
           
         </Switch>
