@@ -13,7 +13,8 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   appbarr:{
     backgroundColor:"rgb(25, 118, 210)",
-    color:'#fff'
+    color:'#fff',
+    marginBottom:'10px'
   },
   navtitle:{
     color: "aliceblue",
@@ -52,6 +53,7 @@ function Navbaressai() {
               <Button className={classes.navitem} href='/contact'>Contact</Button>
               <Button className={classes.navitem} href='/faq'>FAQ</Button>
               <Button className={classes.navitem} href='/googlesheet'>Google Sheet</Button>
+              <Button className={classes.navitem} href='/appmuicomponent'>Mui Component</Button>
 
           </>
         </div>

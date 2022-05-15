@@ -6,6 +6,8 @@ import About from "./compo/About";
 import Contact from "./compo/Contact";
 import Faq from "./compo/Faq";
 import Googlesheetiframe from "./Googlesheetiframe";
+import Appmuicomponent from "./compo/MUI_component/Appmuicomponent";
+
 
 
 export default class App extends Component {
@@ -20,6 +22,9 @@ export default class App extends Component {
           <Route path='/contact' component={Contact}></Route>
           <Route path='/faq' component={Faq}></Route>
           <Route path='/googlesheet' component={Googlesheetiframe}></Route>
+          <Route path='/appmuicomponent' component={Appmuicomponent}></Route>
+
+          
         </Switch>
     </Router>
     </div>
