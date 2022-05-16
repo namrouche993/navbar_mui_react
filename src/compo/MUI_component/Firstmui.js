@@ -37,7 +37,7 @@ class Firstmui extends React.Component{
           alignment:'',
           alignmentname:'',
 
-          textradio1:'',
+          textesexe1:'',
           age:''
         };
         this.myRef = React.createRef();
@@ -68,8 +68,13 @@ class Firstmui extends React.Component{
   };
 
       Radiochange=(event, value ) => {
-          this.setState({textradio1:value})
+          this.setState({textradio1:value.toString()})
       } 
+
+
+      Sexechange=(event, value ) => {
+        this.setState({textesexe1:value.toString()})
+    } 
 
       Togglegrpbtn=(event, newAlignment ) => {
         Namegrpbrn2.map((item)=>{
@@ -87,7 +92,6 @@ class Firstmui extends React.Component{
                 color:!this.state.color,
             })
         }
-        
     }
 
     
@@ -122,7 +126,7 @@ class Firstmui extends React.Component{
                         //onMouseEnter={()=>this.Changecolor()}
                       >Hello World
                     </Button>
-                    <Checkbox inputRef={this.Checkref}/>
+                    <Checkbox inputRef={this.Checkref} onChange={this.Radiochange}/>
                     <br></br>
                     <br></br>
                     <TextField type="text" onChange={this.ValueTextInput} inputRef={this.textInput} id="outlined-basic" label="Entrer un Texte" variant="outlined" />
@@ -136,7 +140,11 @@ class Firstmui extends React.Component{
                     et le contenu de l'input text est : {this.state.value}, <br></br>
                     et l'alignement est sur {this.state.alignmentname} <br></br>
                     et le radio1 est checké ?? : {this.state.textradio1} <br></br>
+                    et le sexe est : {this.state.textesexe1} <br></br>
+                    l'age c'est : {this.state.age} <br></br>
 
+                    
+                    
                     </p>
 
 
@@ -165,7 +173,7 @@ class Firstmui extends React.Component{
         aria-labelledby="demo-row-radio-buttons-group-label"
         name="row-radio-buttons-group"
         id='radiogroup1'
-        onChange={this.Radiochange}
+        onChange={this.Sexechange}
       >
         <FormControlLabel value="female" control={<Radio id='radio1id'ref={this.radioref1} onClick={this.Radiorefcheck1} />} label="Female" />
         <FormControlLabel value="male" control={<Radio />} label="Male" />

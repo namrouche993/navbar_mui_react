@@ -14,6 +14,17 @@ export default class Selectcomp extends React.Component {
           age:''
         }        
     };
+
+      
+  handleChangeage = (event) => {
+    this.setState({age:event.target.value});
+  };
+/*
+  Sendagevalue = () => {
+    this.props.agee(this.state.age);
+  }
+*/
+
   render() {
     return (
         <FormControl sx={{ width: 1/8 }}>
@@ -23,7 +34,7 @@ export default class Selectcomp extends React.Component {
           id="demo-simple-select"
           value={this.state.age}
           label="Age"
-          onChange={this.handleChange}
+          onChange={this.handleChangeage}
         >
           <MenuItem value={10}>Ten</MenuItem>
           <MenuItem value={20}>Twenty</MenuItem>
