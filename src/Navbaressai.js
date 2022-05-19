@@ -55,6 +55,7 @@ function Navbaressai() {
               <Button className={classes.navitem} href='/googlesheet'>Google Sheet</Button>
               <Button className={classes.navitem} href='/appmuicomponent'>Mui Component</Button>
               <Button className={classes.navitem} href='/learningreact'>first react lessons</Button>
+              <Button className={classes.navitem} href='/tablecompo'>Table compo</Button>
 
               
           </>

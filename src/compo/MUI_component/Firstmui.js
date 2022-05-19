@@ -16,6 +16,7 @@ import {
 } from "@material-ui/core";
 
 import Selectcomp from './Selectcomp';
+import Child from './Child';
 
 
 const Namegrpbrn2 = [
@@ -38,7 +39,8 @@ class Firstmui extends React.Component{
           alignmentname:'',
 
           textesexe1:'',
-          age:''
+          age:'',
+          value0:''
         };
         this.myRef = React.createRef();
         this.textInput = React.createRef();
@@ -62,10 +64,16 @@ class Firstmui extends React.Component{
       }
       */
 
+
+  handleChangeagepropsparent = (event) => {
+    this.setState({age:event.target.value})
+
+  }
+  handleChangeValue = event => this.setState({value0: event.target.value});
       
-  handleChangeage = (event) => {
-    this.setState({age:event.target.value});
-  };
+  //handleChangeage = (event) => {
+  //  this.setState({age:event.target.value});
+  //};
 
       Radiochange=(event, value ) => {
           this.setState({textradio1:value.toString()})
@@ -120,7 +128,11 @@ class Firstmui extends React.Component{
        
         return (
             <div>
-                
+                 <Child
+                     value={this.state.value0}
+                     onChangeValue={this.handleChangeValue}
+                  />
+                <br></br>
                    <Button id='myfirstbtn' ref={this.myRef} variant="contained" 
                         onClick={()=>{this.Changecolor()}} 
                         //onMouseEnter={()=>this.Changecolor()}
@@ -142,6 +154,7 @@ class Firstmui extends React.Component{
                     et le radio1 est checké ?? : {this.state.textradio1} <br></br>
                     et le sexe est : {this.state.textesexe1} <br></br>
                     l'age c'est : {this.state.age} <br></br>
+                    la valeur0 c'est : {this.state.value0} <br></br>
 
                     
                     
@@ -160,10 +173,13 @@ class Firstmui extends React.Component{
                   </ToggleButtonGroup>
                   <br></br>
                   <br></br>
+
      <FormGroup>
       <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
       <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
     </FormGroup>
+                  <br></br>
+                  <br></br>
 
 
     <FormControl>
@@ -187,7 +203,7 @@ class Firstmui extends React.Component{
       </RadioGroup>
     </FormControl>
     <br></br>
-    <Selectcomp/>  
+    <Selectcomp handleChangeageprops={this.handleChangeagepropsparent}/>  
 
               </div>
              )
