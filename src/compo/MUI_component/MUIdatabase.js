@@ -7,6 +7,12 @@ import Done from "@material-ui/icons/Done";
 
  
 export default class MUIdatabase extends Component {
+constructor(){
+  super();
+  this.state={
+    ligneselected:''
+  }
+}
 
   showAlert=(valuee)=>{
     alert("I'm an alert"+valuee);
@@ -21,12 +27,15 @@ columns = [
   {name:"Health",
   options: {
     customBodyRender: (value, tableMeta, updateValue) => {
-      console.log("tableMeta.tableData[1][2]:");
-      console.log(tableMeta.tableData[1][2]);
-      console.log("tableMeta");
-      console.log(tableMeta);
+      //console.log("tableMeta.tableData[1][2]:");
+      //console.log(tableMeta.tableData[1][2]);
+      //console.log("tableMeta");
+      //console.log(tableMeta);
       console.log('valuevalue');
       console.log(value);
+      console.log('tableMetatableMeta')
+      console.log(tableMeta);
+
 
 
       if (value === "OK")
@@ -38,7 +47,7 @@ columns = [
       else
         return (
           //<Tooltip title="Failing">
-          <button onClick={()=>this.showAlert(value)}>Afficher l'alert</button>
+          <button onClick={()=>this.showAlert(tableMeta.rowIndex)}>Afficher l'alert</button>
           //</Tooltip>
         );
     }
@@ -85,6 +94,41 @@ data = [
 
 
 options = {
+  selectToolbarPlacement:'none',
+  filter: false,
+  search: false,
+  print: false,
+  download: false,
+  viewColumns: false,
+  customToolbar: null,
+  responsive: 'vertical',
+  pagination:false,
+  onRowSelectionChange:(currentRowsSelected, allRowsSelected, rowsSelected) => {
+    console.log('currentRowsSelected')
+    console.log(currentRowsSelected)
+    console.log('allRowsSelected')
+    console.log(allRowsSelected)
+    console.log('rowsSelected')
+    const lignse = JSON.stringify(Object.values(rowsSelected));
+    console.log(lignse)
+    //console.log(rowsSelected)
+    //this.setState({ligneselected:rowsSelected})
+    this.setState({ligneselected:lignse})
+    //alert('la ligne selectionee est :'+rowsSelected)
+  },
+  //rowsSelected:[2],
+ 
+  //selectableRowsOnClick:true,
+  //onCellClick:(colData, cellMeta) => {
+  //  console.log(cellMeta.colIndex)
+  //  //console.log(colData)
+  //},
+  //isRowSelectable:(dataIndex: number, selectedRows: object(lookup: {dataindex: boolean}, data: arrayOfObjects: {index, dataIndex})) => 
+//  onRowClick:(rowData: string[], rowMeta: { dataIndex: number, rowIndex: number }){}
+ // onRowClick:(rowData, rowMeta)=>{
+  //    console.log(rowMeta.rowIndex)
+ // },
+
  //filterType: 'checkbox',
  //filter:true,
  //expandableRowsOnClick:true,
@@ -95,9 +139,7 @@ options = {
  //customToolbar: () =>{
  //  return 'usmisaaa'
  //},
- selectToolbarPlacement:'none',
- 
- //fixedSelectColumn:'false',
+  //fixedSelectColumn:'false',
  //viewColumns:'false',
  //selectableRowsHideCheckboxes:'true',
  //selectableRows:'none',
@@ -118,13 +160,16 @@ options = {
  
 };
  
+getselectedlines=()=>{
+
+}
 
   render() {
     return (
       <div>
-          
+<h2>les lignes selectionnes sont : {this.state.ligneselected}</h2>          
     <MUIDataTable
-  title={"Employee List!!"}
+  title={""}
   data={this.data}
   columns={this.columns}
   options={this.options}

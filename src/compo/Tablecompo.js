@@ -4,6 +4,7 @@ import Box from '@material-ui/core/Box';
 import Tablee from './MUI_component/Tablee'
 import BasicTablee2 from './MUI_component/BasicTablee2'
 import MUIdatabase from './MUI_component/MUIdatabase'
+import MUIdatatable2 from './MUI_component/MUIdatatable2'
 
 
 
@@ -56,7 +57,11 @@ function Tablecompo() {
     <Box sx={{ maxWidth: 700 }}>
     <MUIdatabase/>
     </Box>
-
+    <br></br>
+    <br></br>
+    <Box sx={{ maxWidth: 1200 }}>
+    <MUIdatatable2/>
+    </Box>
     </div>
   )
 }
