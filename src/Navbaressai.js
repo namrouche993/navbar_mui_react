@@ -56,6 +56,7 @@ function Navbaressai() {
               <Button className={classes.navitem} href='/appmuicomponent'>Mui Component</Button>
               <Button className={classes.navitem} href='/learningreact'>first react lessons</Button>
               <Button className={classes.navitem} href='/tablecompo'>Table compo</Button>
+              <Button className={classes.navitem} href='/reactexo'>React exo</Button>
 
               
           </>

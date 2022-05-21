@@ -9,6 +9,8 @@ import Googlesheetiframe from "./compo/Googlesheetiframe";
 import Appmuicomponent from "./compo/Appmuicomponent";
 import Learningreact from "./compo/Learningreact";
 import Tablecompo from "./compo/Tablecompo";
+import Reactexo from "./compo/reactexo";
+
 
 
 
@@ -27,6 +29,7 @@ export default class App extends Component {
           <Route path='/appmuicomponent' component={Appmuicomponent}></Route>
           <Route path='/learningreact' component={Learningreact}></Route>
           <Route path='/tablecompo' component={Tablecompo}></Route>
+          <Route path='/reactexo' component={Reactexo}></Route>
 
           
         </Switch>
