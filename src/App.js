@@ -9,7 +9,7 @@ import Googlesheetiframe from "./compo/Googlesheetiframe";
 import Appmuicomponent from "./compo/Appmuicomponent";
 import Learningreact from "./compo/Learningreact";
 import Tablecompo from "./compo/Tablecompo";
-import Reactexo from "./compo/reactexo";
+import Reactexo from "./compo/Reactexo";
 
 
 
