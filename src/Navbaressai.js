@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '18px',
   },
   navitem: {
-    paddingLeft: '44px',
+    paddingLeft: '40px',
     color: "aliceblue",
     textDecoration: "auto",
     //fontFamily: "monospace",
@@ -51,12 +51,13 @@ function Navbaressai() {
               <Button className={classes.navitem} href='/'>Home</Button>
               <Button className={classes.navitem} href='/about'>About</Button>
               <Button className={classes.navitem} href='/contact'>Contact</Button>
-              <Button className={classes.navitem} href='/faq'>FAQ</Button>
               <Button className={classes.navitem} href='/googlesheet'>Google Sheet</Button>
               <Button className={classes.navitem} href='/appmuicomponent'>Mui Component</Button>
               <Button className={classes.navitem} href='/learningreact'>first react lessons</Button>
               <Button className={classes.navitem} href='/tablecompo'>Table compo</Button>
               <Button className={classes.navitem} href='/reactexo'>React exo</Button>
+              <Button className={classes.navitem} href='/reactexo2'>REACT layout</Button>
+
 
               
           </>

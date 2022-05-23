@@ -5,6 +5,7 @@ import Tablee from './MUI_component/Tablee'
 import BasicTablee2 from './MUI_component/BasicTablee2'
 import MUIdatabase from './MUI_component/MUIdatabase'
 import MUIdatatable2 from './MUI_component/MUIdatatable2'
+import MUIdatatable3 from './MUI_component/MUIdatatable3'
 
 
 
@@ -61,6 +62,9 @@ function Tablecompo() {
     <br></br>
     <Box sx={{ maxWidth: 1200 }}>
     <MUIdatatable2/>
+    </Box>
+    <Box sx={{ maxWidth: 700 }}>
+    <MUIdatatable3/>
     </Box>
     </div>
   )
