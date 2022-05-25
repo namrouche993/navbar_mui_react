@@ -63,7 +63,7 @@ function Tablecompo() {
     <Box sx={{ maxWidth: 1200 }}>
     <MUIdatatable2/>
     </Box>
-    <Box sx={{ maxWidth: 700 }}>
+    <Box sx={{ maxWidth: 250 }}>
     <MUIdatatable3/>
     </Box>
     </div>
