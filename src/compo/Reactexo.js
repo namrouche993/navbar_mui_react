@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import clsx from "clsx";
+import MUIdatatable3 from './MUI_component/MUIdatatable3'
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles({
   container: {
@@ -22,15 +24,30 @@ const useStyles = makeStyles({
 
 export default function Reactexo() {
   const classes = useStyles();
+  const [hach2,setHach]=useState('22')
+
+ /* const Functsct = () => {
+    setHach()
+  }
+*/
+ const Selectrowparent=(currentRowsSelected, allRowsSelected, rowsSelected) => {
+  setHach(rowsSelected)
+ }
+
+ 
 
   return (
     <Grid container direction="row" spacing={2} >
       <Grid item xs={2}>
-        <div className={classes.container}>1</div>
+        <div className={classes.container}>
+              <Box>
+                    <MUIdatatable3 Selectrow={Selectrowparent}/>
+              </Box>
+        </div>
       </Grid>
       <Grid item container direction="column" xs spacing={2}>
         <Grid item xs>
-          <div className={classes.container}>2</div>
+          <div className={classes.container}>{hach2}</div>
         </Grid>
         <Grid item xs>
           <div className={clsx(classes.container, classes.containerTall)}>

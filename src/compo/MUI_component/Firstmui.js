@@ -67,8 +67,8 @@ class Firstmui extends React.Component{
 
   handleChangeagepropsparent = (event) => {
     this.setState({age:event.target.value})
-
   }
+  
   handleChangeValue = event => this.setState({value0: event.target.value});
       
   //handleChangeage = (event) => {
