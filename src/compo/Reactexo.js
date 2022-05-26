@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import clsx from "clsx";
 import MUIdatatable3 from './MUI_component/MUIdatatable3'
 import Box from '@material-ui/core/Box';
+import Opgi from './MUI_component/Opgi';
 
 const useStyles = makeStyles({
   container: {
@@ -24,14 +25,33 @@ const useStyles = makeStyles({
 
 export default function Reactexo() {
   const classes = useStyles();
-  const [hach2,setHach]=useState('22')
+  const [hach2,setHach]=useState('Toutes les wilayas')
+  const [effectif,setEffectif]=useState(0)
 
- /* const Functsct = () => {
-    setHach()
-  }
-*/
+
  const Selectrowparent=(currentRowsSelected, allRowsSelected, rowsSelected) => {
-  setHach(rowsSelected)
+
+  console.log(rowsSelected[0])
+  console.log("le type " +typeof rowsSelected[0])
+
+  //const sumef=0
+  //const fsumeffectif =  Opgi.map((efitem)=>{
+  //  sumef=sumef+parseInt(efitem.id2)
+  //})
+  //console.log("listef egale a : " + Opgi.id2)
+
+if(typeof(rowsSelected[0])!=="undefined"){
+  const arr1 = Opgi.filter(d => d.id1 === parseInt(rowsSelected)+1);
+  setHach(arr1[0].OPGI)
+
+  const arr2 = Opgi.filter(d => d.id1 === parseInt(rowsSelected)+1);
+  setEffectif(arr1[0].Effectif)
+
+} else {
+  setHach("Toutes les wilayas")
+  setEffectif(0)
+}
+  //const da=JSON.stringify(arr1[0])
  }
 
  
@@ -47,7 +67,14 @@ export default function Reactexo() {
       </Grid>
       <Grid item container direction="column" xs spacing={2}>
         <Grid item xs>
-          <div className={classes.container}>{hach2}</div>
+          <div className={classes.container}>
+          <Box>            
+            {hach2}
+            <br></br>
+            Effectif : {effectif}
+          </Box>
+
+          </div>
         </Grid>
         <Grid item xs>
           <div className={clsx(classes.container, classes.containerTall)}>

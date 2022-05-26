@@ -1,247 +1,171 @@
-import React from 'react';
-//import MUIDataTable from '../../src/';
+import React, { useEffect, useState } from "react";
+
+import {FormControlLabel,TextField,Switch} from "@material-ui/core";
+//import MUIDataTable from "mui-datatables";
 import MUIDataTable from "mui-datatables";
-import { ThemeProvider } from '@mui/material/styles';
-import { withStyles } from 'tss-react/mui';
-import { createTheme } from '@mui/material/styles';
-import Switch from '@mui/material/Switch';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import clsx from 'clsx';
-import { CacheProvider } from '@emotion/react';
-import createCache from '@emotion/cache';
 
-const muiCache = createCache({
-  key: 'mui-datatables',
-  prepend: true,
-});
+import Opgi from './Opgi';
 
-const customStyles = theme => ({
-  BusinessAnalystRow: {
-    '& td': { backgroundColor: '#FAA' },
-  },
-  GreyLine: {
-    '& td': { backgroundColor: theme.palette.grey[200] },
-  },
-  NameCell: {
-    fontWeight: 900,
-  },
-});
+//   const opgiw= Opgi.map((item)=>{
+//     return <ProductsComp key={item.id} id={item.id} name={item.name} age={item.age}/>
+//   })
 
-class MUIdatatable4 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      denseTable: false,
-      vertical: true,
-    };
+
+
+function MUIdatatable3(props) {
+
+  const [sctopgi,setOpgi]=useState('dda')
+
+  
+
+  useEffect(()=>{
+
+  
+  /*  const ss2=document.getElementsByClassName('tss-ylo811-MUIDataTableSelectCell-headerCell')
+    ss2[2].style.backgroundColor='darkslategray'
+
+    const nn2=document.getElementsByClassName('tss-gm6zfk-MUIDataTableHeadCell-fixedHeader')
+    for (let i = 0; i < 13; i++) {
+      nn2[i].style.backgroundColor='darkslategray'
+      nn2[i].style.color='white'
+    }
+  
+    const bb2=document.getElementsByClassName('MuiTableCell-root')
+    for (let i = 0; i < 250; i++) {
+      bb2[i].style.padding='0px'
+    }*/
   }
+  )
 
-  getMuiTheme = () =>
-    createTheme({
-      components: {
-        MUIDataTable: {
-          styleOverrides: {
-            root: {
-              backgroundColor: '#red',
-            },
-            paper: {
-              boxShadow: 'none',
-            },
-          },
-        },
-        MuiToolbar: {
-          styleOverrides: {
-            root: {
-              backgroundColor: '#f00',
-            },
-          },
-        },
-        MuiTableCell: {
-          styleOverrides: {
-            head: {
-              backgroundColor: 'purple',
-            },
-          },
-        },
-        MUIDataTableSelectCell: {
-          styleOverrides: {
-            headerCell: {
-              backgroundColor: 'blue',
-            },
-          },
-        },
-        MuiTableFooter: {
-          styleOverrides: {
-            root: {
-              '& .MuiToolbar-root': {
-                backgroundColor: 'white',
-              },
-            },
-          },
-        },
-      },
-    });
 
-  toggleDenseTable = event => {
-    this.setState({
-      denseTable: event.target.checked,
-    });
-  };
+  const columns = [
+    {
+      name: "OPGI",
+      label:"OPGI",
+      options: {
+        
+        filter: true,
+       // customHeadRender: (columnMeta, updateDirection) => (
+            //columnMeta.filter=true,
+       //     <th //key={1} 
+            //onClick={() => updateDirection(2)}
+         //    style={{backgroundColor:'darkslategray',color: 'white',
+           //  padding: "4px",textAlign: "left"}}>
+           //     {columnMeta.name}
+        //    </th>
+        //),
+     //     customBodyRender: (value, tableMeta, updateValue) => {
+        //  return <Cities value={value || ''} index={tableMeta.columnIndex} change={event => updateValue(event)} />;
+        //    return <Button variant="contained">{value}</Button>
+     //   return  <div style={{padding:"0px"}}> <span style={{color:"black"}}>{value}</span>  </div>
+     //   },
+    }
+    }
+  ];
 
-  toggleResponsive = event => {
-    this.setState({
-      vertical: !!event.target.checked,
-    });
-  };
 
-  render() {
-    const columns = [
-      {
-        name: 'Name',
-        options: {
-          filter: true,
-          setCellProps: value => {
-            return {
-              className: clsx({
-                [this.props.classes.NameCell]: value === 'Mel Brooks',
-              }),
-              style: {
-                borderRight: '2px solid blue',
-              },
-            };
-          },
-          setCellHeaderProps: value => {
-            return {
-              className: clsx({
-                [this.props.classes.NameCell]: true,
-              }),
-              style: {
-                textDecoration: 'underline',
-              },
-            };
-          },
-        },
-      },
-      {
-        name: 'Title',
-        options: {
-          filter: true,
-          setCellHeaderProps: value => ({ style: { textDecoration: 'underline' } }),
-        },
-      },
-      {
-        name: 'Location',
-        options: {
-          filter: false,
-        },
-      },
-      {
-        name: 'Age',
-        options: {
-          filter: true,
-        },
-      },
-      {
-        name: 'Salary',
-        options: {
-          filter: true,
-          sort: false,
-        },
-      },
-    ];
+  
+  const data = Opgi
+  // .map((item)=>{
+  //   return item.OPGI
+  // });
 
-    const data = [
-      ['Gabby George', 'Business Analyst', 'Minneapolis', 30, 100000],
-      ['Aiden Lloyd', 'Business Consultant', 'Dallas', 55, 200000],
-      ['Jaden Collins', 'Attorney', 'Santa Ana', 27, 500000],
-      ['Franky Rees', 'Business Analyst', 'St. Petersburg', 22, 50000],
-      ['Aaren Rose', 'Business Consultant', 'Toledo', 28, 75000],
-      ['Blake Duncan', 'Business Management Analyst', 'San Diego', 65, 94000],
-      ['Frankie Parry', 'Agency Legal Counsel', 'Jacksonville', 71, 210000],
-      ['Lane Wilson', 'Commercial Specialist', 'Omaha', 19, 65000],
-      ['Robin Duncan', 'Business Analyst', 'Los Angeles', 20, 77000],
-      ['Mel Brooks', 'Business Consultant', 'Oklahoma City', 37, 135000],
-      ['Harper White', 'Attorney', 'Pittsburgh', 52, 420000],
-      ['Kris Humphrey', 'Agency Legal Counsel', 'Laredo', 30, 150000],
-      ['Frankie Long', 'Industrial Analyst', 'Austin', 31, 170000],
-      ['Brynn Robbins', 'Business Analyst', 'Norfolk', 22, 90000],
-      ['Justice Mann', 'Business Consultant', 'Chicago', 24, 133000],
-      ['Addison Navarro', 'Business Management Analyst', 'New York', 50, 295000],
-      ['Jesse Welch', 'Agency Legal Counsel', 'Seattle', 28, 200000],
-      ['Eli Mejia', 'Commercial Specialist', 'Long Beach', 65, 400000],
-      ['Gene Leblanc', 'Industrial Analyst', 'Hartford', 34, 110000],
-      ['Danny Leon', 'Computer Scientist', 'Newark', 60, 220000],
-      ['Lane Lee', 'Corporate Counselor', 'Cincinnati', 52, 180000],
-      ['Jesse Hall', 'Business Analyst', 'Baltimore', 44, 99000],
-      ['Danni Hudson', 'Agency Legal Counsel', 'Tampa', 37, 90000],
-      ['Terry Macdonald', 'Commercial Specialist', 'Miami', 39, 140000],
-      ['Justice Mccarthy', 'Attorney', 'Tucson', 26, 330000],
-      ['Silver Carey', 'Computer Scientist', 'Memphis', 47, 250000],
-      ['Franky Miles', 'Industrial Analyst', 'Buffalo', 49, 190000],
-      ['Glen Nixon', 'Corporate Counselor', 'Arlington', 44, 80000],
-      ['Gabby Strickland', 'Business Process Consultant', 'Scottsdale', 26, 45000],
-      ['Mason Ray', 'Computer Scientist', 'San Francisco', 39, 142000],
-    ];
+  console.log("data est :")
+  console.log(data)
 
-    const options = {
-      filter: true,
-      filterType: 'dropdown',
-      responsive: this.state.vertical ? 'vertical' : 'standard',
-      fixedHeader: false,
-      fixedSelectColumn: false,
-      rowHover: false,
-      setRowProps: (row, dataIndex, rowIndex) => {
-        return {
-          className: clsx({
-            [this.props.classes.BusinessAnalystRow]: row[1] === 'Business Analyst',
-            [this.props.classes.GreyLine]: rowIndex % 2 === 0 && row[1] !== 'Business Analyst',
-          }),
-          style: { border: '3px solid blue' },
-        };
-      },
-      setTableProps: () => {
-        return {
-          padding: this.state.denseTable ? 'none' : 'default',
+  const data0 = data
+  console.log("data0 est :")
+  console.log(data0)
 
-          // material ui v4 only
-          size: this.state.denseTable ? 'small' : 'medium',
-        };
-      },
-    };
+  console.log("Opgi[0].OPGI est :")
+  console.log(Opgi[0].OPGI)
 
-    return (
-      <CacheProvider value={muiCache}>
-        <ThemeProvider theme={this.getMuiTheme()}>
-          <FormGroup row>
-            <FormControlLabel
-              control={
-                <Switch
-                  checked={this.state.denseTable}
-                  onChange={this.toggleDenseTable}
-                  value="denseTable"
-                  color="primary"
-                />
-              }
-              label="Dense Table"
-            />
-            <FormControlLabel
-              control={
-                <Switch
-                  checked={this.state.vertical}
-                  onChange={this.toggleResponsive}
-                  value="vertical"
-                  color="primary"
-                />
-              }
-              label="Responsive Vertical Table"
-            />
-          </FormGroup>
-          <MUIDataTable title={'ACME Employee list'} data={data} columns={columns} options={options} />
-        </ThemeProvider>
-      </CacheProvider>
-    );
-  }
+  console.log("JSON")
+  //const dd=JSON.parse(Opgi)
+  //console.log(dd.OPGI)
+
+
+const options = {
+tableBodyHeight:'700px',
+sort:false,
+selectToolbarPlacement:'none',
+selectableRowsHeader:false,
+selectToolbarPlacement:'none',
+selectableRowsOnClick:true,
+selectableRowsHideCheckboxes:false,
+//customRowRender:(data, dataIndex, rowIndex)=>{
+//  return <div>{data}</div>
+//},
+selectableRows:"single",
+//tableBodyHeight:"700px",
+filter: false,
+search: false,
+print: false,
+download: false,
+viewColumns: false,
+customToolbar: null,
+responsive: 'vertical',
+pagination:false,
+//sort:false,
+//onRowSelectionChange:{Selectrow}
+/*onRowSelectionChange:(currentRowsSelected, allRowsSelected, rowsSelected) => {
+  {props.Selectrow}
+  console.log('currentRowsSelected')
+  console.log(currentRowsSelected)
+  console.log('allRowsSelected')
+  console.log(allRowsSelected)
+  console.log('rowsSelected')
+  const lignse = JSON.stringify(Object.values(rowsSelected));
+  console.log(lignse)
+  //console.log(rowsSelected)
+  //this.setState({ligneselected:rowsSelected})
+  setOpgi(rowsSelected)
+
+  //this.setState({ligneselected:lignse})
+  //alert('la ligne selectionee est :'+rowsSelected)
+},
+*/
+//count:'49'
+};
+
+  return (
+    <div>
+       <MUIDataTable title={""} data={data} columns={columns}
+       options={{
+         onRowSelectionChange:props.Selectrow,
+         tableBodyHeight:'700px',
+         sort:false,
+         selectToolbarPlacement:'none',
+         selectableRowsHeader:false,
+         selectToolbarPlacement:'none',
+         selectableRowsOnClick:true,
+         selectableRowsHideCheckboxes:false,
+         //customRowRender:(data, dataIndex, rowIndex)=>{
+         //  return <div>{data}</div>
+         //},
+         selectableRows:"single",
+         //tableBodyHeight:"700px",
+         filter: false,
+         search: false,
+         print: false,
+         download: false,
+         viewColumns: false,
+         customToolbar: null,
+         responsive: 'vertical',
+         pagination:false,
+         }}/>
+    </div>
+  )
 }
 
-export default withStyles(MUIdatatable4, customStyles, { name: 'ExampleCardjs' });
+export default MUIdatatable3;
+
+/*export {
+  MUIdatatable3,
+  Contact,
+}
+*/
+/*
+  componentDidMount(){
+ 
+*/
