@@ -35,51 +35,53 @@ export default function Reactexo2() {
 
   return (
   <Grid container direction="column" spacing={2} >
+     
      <Grid item xs>
         <div className={classes.containerCard}>0</div>
       </Grid>
-    <Grid container direction="row" spacing={2} >
-        <Grid item container direction="column" xs={2} spacing={2}>
-      <Grid item xs>
-        <div className={classes.containerCard}>1</div>
-      </Grid>
-      <Grid item xs>
-        <div className={classes.containerCard}>1.1</div>
-      </Grid>
-      <Grid item xs>
-        <div className={classes.containerCard}>1.2</div>
-      </Grid>
-      <Grid item xs>
-        <div className={classes.containerCard}>1.3</div>
-      </Grid>
-      <Grid item xs>
-        <div className={classes.containerCard}>1.4</div>
-      </Grid>
-      <Grid item xs>
-        <div className={classes.containerCard}>1.4</div>
-      </Grid>
-    </Grid>
-      <Grid item container direction="column" xs={6} md={3} spacing={2}>
+
+    <Grid container item direction="row" spacing={2} >
+      <Grid item container direction="column" xs={2} spacing={2}>
         <Grid item xs>
-          <div className={classes.container}>2</div>
+             <div className={classes.containerCard}>1</div>
+         </Grid>
+         <Grid item xs>
+             <div className={classes.containerCard}>1.1</div>
+         </Grid>
+         <Grid item xs>
+             <div className={classes.containerCard}>1.2</div>
+         </Grid>
+         <Grid item xs>
+              <div className={classes.containerCard}>1.3</div>
+         </Grid>
+         <Grid item xs>
+              <div className={classes.containerCard}>1.4</div>
+         </Grid>
+         <Grid item xs>
+              <div className={classes.containerCard}>1.4</div>
+         </Grid>
+    </Grid>
+    <Grid item container direction="column" xs={6} md={3} spacing={2}>
+        <Grid item xs>
+           <div className={classes.container}>2</div>
         </Grid>
         <Grid item xs>
           <div className={clsx(classes.container, classes.containerTall)}>
             3
           </div>
         </Grid>
-      </Grid>
+    </Grid>
       
-      <Grid item container direction="column" xs spacing={2}>
-         <Grid item xs>
+    <Grid item container direction="column" xs spacing={2}>
+        <Grid item xs>
            <div className={classes.container}>4</div>
-         </Grid>
-         <Grid item xs>
+        </Grid>
+        <Grid item xs>
            <div className={classes.container}>5</div>
          </Grid>
-      </Grid>
     </Grid>
   </Grid>
+</Grid>
 
     
   );

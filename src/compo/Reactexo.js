@@ -26,19 +26,19 @@ const useStyles = makeStyles({
 export default function Reactexo() {
   const classes = useStyles();
   const [hach2,setHach]=useState('Toutes les wilayas')
-  const [effectif,setEffectif]=useState(0)
+ 
+  let sumef = 0;
+
+  for (let i = 0; i < Opgi.length; i++) {
+    sumef += parseInt(Opgi[i].Effectif);
+}
+  const [effectif,setEffectif]=useState(sumef)
 
 
  const Selectrowparent=(currentRowsSelected, allRowsSelected, rowsSelected) => {
 
   console.log(rowsSelected[0])
   console.log("le type " +typeof rowsSelected[0])
-
-  //const sumef=0
-  //const fsumeffectif =  Opgi.map((efitem)=>{
-  //  sumef=sumef+parseInt(efitem.id2)
-  //})
-  //console.log("listef egale a : " + Opgi.id2)
 
 if(typeof(rowsSelected[0])!=="undefined"){
   const arr1 = Opgi.filter(d => d.id1 === parseInt(rowsSelected)+1);
@@ -49,7 +49,12 @@ if(typeof(rowsSelected[0])!=="undefined"){
 
 } else {
   setHach("Toutes les wilayas")
-  setEffectif(0)
+  let sumef = 0;
+
+  for (let i = 0; i < Opgi.length; i++) {
+    sumef += parseInt(Opgi[i].Effectif);
+}
+ setEffectif(sumef)
 }
   //const da=JSON.stringify(arr1[0])
  }
